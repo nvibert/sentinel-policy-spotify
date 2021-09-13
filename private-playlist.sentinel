@@ -1,0 +1,25 @@
+# Rule to prevent a user to create public Spotify playlist.
+
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+
+import "tfplan-functions" as plan
+
+allowed_playlist_type = ["true"]
+
+print(allowed_playlist_type)
+# Get all playlist
+
+allPlaylist = plan.find_resources("spotify_playlist")
+
+print(allPlaylist)
+# Filter to playlist with wrong settings
+# Warnings will be printed for all violations.
+
+wrongPlaylist = plan.filter_attribute_not_in_list(allPlaylist, "public", allowed_playlist_type, true)
+
+print(wrongPlaylist)
+
+main = rule {
+ length(wrongPlaylist["messages"]) is 0
+}
