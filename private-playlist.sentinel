@@ -5,7 +5,7 @@
 
 import "tfplan-functions" as plan
 
-allowed_playlist_type = ["true"]
+allowed_playlist_type = [true]
 
 print(allowed_playlist_type)
 # Get all playlist
