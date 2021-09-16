@@ -5,7 +5,8 @@
 
 import "tfplan-functions" as plan
 
-allowed_playlist_type = [true]
+## Only private playlist are allowed
+allowed_playlist_type = [false]
 
 print(allowed_playlist_type)
 # Get all playlist
