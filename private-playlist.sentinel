@@ -5,7 +5,6 @@
 
 import "tfplan-functions" as plan
 
-print(allowed_playlist_type)
 # Get all playlist
 
 allPlaylist = plan.find_resources("spotify_playlist")
